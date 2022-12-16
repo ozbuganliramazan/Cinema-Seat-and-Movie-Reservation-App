@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinema Bilet Rezervasyon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="screen">Welcome To Cinema <br />
+            Choose Your Seats
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat reserved"></div>
+            <div class="seat reserved"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat reserved"></div>
+            <div class="seat reserved"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+    </div>
+
+    <div class="movie-list">
+        <select id="movie" style="width: 200px;">
+            <option>Select The Movie</option>
+            <option data-img_src="lovo1.jpeg"  value="20">The Shawshank Redemption 1</option>
+            <option data-img_src="lovo2.jpeg" value="25">The Godfather 2</option>
+            <option data-img_src="Lovo3.jpeg" value="30">The Dark Knight 3</option>
+        </select>
+            
+
+        </select>
+    </div>
+
+    <ul class="info">
+        <li>
+            <div class="seat selected"></div>
+            <small>Selected </small>
+
+        </li>
+        <li>
+            <div class="seat"></div>
+            <small>Empty</small>
+        </li>
+        <li>
+            <div class="seat reserved"></div>
+            <small>Filled</small>
+
+        </li>
+    </ul>
+
+    <p class="text">
+        <span id="cout">0</span> Fees per seat <span id="amount">0</span> $.
+    </p>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+    <script type="text/javascript">
+        function custom_template(obj){
+                var data = $(obj.element).data();
+                var text = $(obj.element).text();
+                if(data && data['img_src']){
+                    img_src = data['img_src'];
+                    template = $("<div><img src=\"" + img_src + "\" style=\"width:100%;height:150px;\"/><p style=\"font-weight: 700;font-size:14pt;text-align:center;\">" + text + " </p></div>");
+                    return template;
+                }
+            }
+        var options = {
+            'templateSelection': custom_template,
+            'templateResult': custom_template,
+        }
+        $('#movie').select2(options);
+        $('.select2-container--default .select2-selection--single').css({'height': '100px'});
+    
+    </script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
