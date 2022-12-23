@@ -1,6 +1,6 @@
-<h1>Sinema Koltuk ve Filim Rezervasyon Uygulaması</h1>
+<h1>Cinema Seat and Movie Reservation Application</h1>
 
 
-<p>Html Css Javascrip Birlikte Tasarlandı</p>
+<p>Designed with Html Css Javascript</p>
 
 <img src="logo.gif" />
